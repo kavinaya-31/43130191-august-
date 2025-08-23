@@ -1,0 +1,10 @@
+create database sathyabama;
+use sathyabama;
+start transaction;
+create table ai(id int,name varchar(25));
+insert into ai values(101, 'guna');
+savepoint A;
+insert into ai(id,name) where id=101;
+rollback to A;
+select * from cse;
+commit;
